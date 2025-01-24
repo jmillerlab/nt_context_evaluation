@@ -12,7 +12,7 @@ def splitList(interval,myList,exon_intron,header,datadict):
     return datadict,header
 
 def parseArgs():
-    parser = argparse.ArgumentParser(description='Extract the individual Ramp sequences from a collection of genes')
+    parser = argparse.ArgumentParser(description='Graph the exon/intron probabilities for a single nucleotide using different contexts')
     parser.add_argument('-i', '--input', type=str, required=True, help='(input) Required input file with two lines: exon=[list of probabilities] and intron=[list of probabilities]')
     parser.add_argument('-o', '--output', type=str, required=True,help='(output) Required output file path. Example: APOE_24.html')
     parser.add_argument('-n', '--interval', type=int, default=24, help='Interval size')
