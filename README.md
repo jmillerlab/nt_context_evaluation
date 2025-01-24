@@ -75,7 +75,20 @@ python graph_pred_at_position.py -i apoe_at_pos_850.txt -o example_output_apoe_8
 
 This script is intended to show the difference in exon and intron prediction probabilities when predicting the first, middle, or last nucleotide in the input sequence across the entire APOE gene.
 
+usage: graph_different_contexts.py [-h] -i INPUT -o OUTPUT [-v] [-z] [-t GRAPH_TITLE]
+
+Graph the exon/intron probabilities across APOE when predicting the first, middle, or last nucleotide
+
+options:
+  -h, --help            show this help message and exit
+  -i, --input INPUT     (input) Required input json file containing a dictionary with key:value pairs of probabilities.
+  -o, --output OUTPUT   (output) Required output file path. Example: APOE_first_middle_last_graph.html. This will be appended to the name of the feature. For example, if the first feature is "Exon" the file path to the graph with that first feature will be "Exon_APOE_first_middle_last_graph.html"
+  -v, --verbose         flag to print the split lists for each interval
+  -z, --zscore          Optional normalization with z score
+  -t, --graph_title GRAPH_TITLE
+                        Change Graph Title
+
 _Example Command_
 ```
-python graph_different_contexts.py -i apoe_first_middle_last_preds.txt -o example_output_first_middle_last.html 
+python graph_different_contexts.py -i apoe_first_middle_last_predictions.txt -o example_first_middle_last.html 
 ```
