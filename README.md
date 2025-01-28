@@ -16,7 +16,7 @@ samtools faidx GCF_000001405.26_GRCh38_genomic.fna.bgz
 ```
 **Step 2: Extract APOE annotations from the gff file**
 ```
-zcat GCF_000001405.26_GRCh38_genomic.gff.gz |grep "APOE" >apoe_grch38.txt
+zcat GCF_000001405.26_GRCh38_genomic.gff.gz |grep "gene=APOE;" >apoe_grch38.txt
 ```
 **Step 2a: Select the interval that you want to query from apoe_grch38.txt**
 
