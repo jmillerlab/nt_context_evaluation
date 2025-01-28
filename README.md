@@ -14,7 +14,9 @@ wget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/GCF_000001405.26_G
 zcat GCF_000001405.26_GRCh38_genomic.fna.gz | bgzip -c >GCF_000001405.26_GRCh38_genomic.fna.bgz
 samtools faidx GCF_000001405.26_GRCh38_genomic.fna.bgz
 ```
-**Step 2: Extract APOE annotations from the gff file**
+**Step 2: Extract gene annotations from the gff file**
+
+As an example, here is how the APOE gene was extracted:
 ```
 zcat GCF_000001405.26_GRCh38_genomic.gff.gz |grep "gene=APOE;" >apoe_grch38.txt
 ```
@@ -26,6 +28,14 @@ In this case, we wanted to look at the entire APOE gene sequence, which apoe_grc
 ```
 samtools faidx GCF_000001405.26_GRCh38_genomic.fna.bgz "NC_000019.10:44855782-44959393" >apoe.fasta
 ```
+Note: Genomic coordinates with +/- 50k bases for the other genes are listed as follows:
+EGFR   NC_000007.14:54969032-55257338
+TNF    NC_000006.12:31525567-31628336
+TP53   NC_000017.11:7618402-7737550
+VEGFA  NC_000006.12:43720209-43836487
+Negative control (NC_000003.12:153050001-153053598)   NC_000003.12:153000001-153103598
+
+
 **Step 4: Run run_nt_apoe.py**
 ```
 python run_nt_apoe.py >apoe_sliding_window_output.txt
