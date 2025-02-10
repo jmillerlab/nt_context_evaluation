@@ -79,13 +79,11 @@ def reformatRunNTResults(args):
         
         output.write("Intron\n")
         for array in intron_pred:
-            output.write(str(array[1:-1]) +"\n") #original program includes one extra nt before and after sequence. Get rid of this
-            #output.write(str(array) +"\n") 
+            output.write(str(array) +"\n") 
         
         output.write("\nExon\n")
         for array in exon_pred:
-            output.write(str(array[1:-1])+"\n")#original program includes one extra nt before and after sequence. Get rid of this
-            #output.write(str(array)+"\n")
+            output.write(str(array)+"\n")
             
 def main():
     args=parseArgs()
