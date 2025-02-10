@@ -1,5 +1,4 @@
-# nt_context_evaluation
-Evaluating how context impacts predictions from the Nucleotide Transformer/SegmentNT
+# Evaluating how context impacts nucleotide-resolution predictions from the Nucleotide Transformer/SegmentNT in the top 5 most cited genes 
 
 **Step 1: Download the Reference Genome**
 
