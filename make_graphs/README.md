@@ -75,5 +75,32 @@ _File 1: example_first_middle_last_Exon.html_
 _File 2: example_first_middle_last_Intron.html_
 <img width="1487" alt="Screenshot 2025-03-07 at 8 43 08 AM" src="https://github.com/user-attachments/assets/cd04e89a-e7ac-4f38-9963-6e43f8ad4f6c" />
 
+**make_violin_plots.py**
+```
+usage: makeViolinPlots.py [-h] -i INPUT -o OUTPUT -g {apoe,egfr,tnf,tp53,vegfa,control} -f {exon,intron} [-r] [-v] [-z] [-t GRAPH_TITLE]
 
+Graph violin plots comparing predictions made when the prediction is for the first, middle, or last nucleotide in the context
 
+options:
+  -h, --help            show this help message and exit
+  -i, --input INPUT     (input) Required input json file containing a dictionary with key:value pairs of probabilities.
+  -o, --output OUTPUT   (output) Required output file path. If you want the image saved as an svg, include the extension .svg in the file name
+  -g, --gene {apoe,egfr,tnf,tp53,vegfa,control}
+                        gene used to draw exons on plot.
+  -f, --feature {exon,intron}
+                        Graph "exon" or "intron" probabilities
+  -r, --reverse         Get probabilities of Introns in Exons or Exons in Introns
+  -v, --verbose         flag to print the split lists for each interval
+  -z, --zscore          Optional normalization with z score
+  -t, --graph_title GRAPH_TITLE
+                        Change Graph Title
+```
+
+_Example Command_
+
+```
+python makeViolinPlots.py -i apoe_first_middle_last_predictions.txt -o violin_plots.svg -g apoe -f exon
+```
+
+_One output file is expected: An svg like the one shown below_
+<img width="793" alt="Screenshot 2025-03-07 at 8 55 58 AM" src="https://github.com/user-attachments/assets/d43c790c-8c6a-47db-9a37-393ce397d80c" />
