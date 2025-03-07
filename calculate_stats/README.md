@@ -15,6 +15,10 @@ Four other output files will also be created or appended to:
 ```stats_middle.txt``` The same as above but for the middle prediction
 ```stats_first.txt``` The same as above but for the predictions of the first nucleotide in a sequence
 
+_The expected output of example.html is shown below_
+<img width="1155" alt="Screenshot 2025-03-07 at 9 10 31 AM" src="https://github.com/user-attachments/assets/5e1d83d8-df06-45a4-8365-fe476a6a0a5a" />
+
+
 **Calculate AUC and Average Exon/Intron Lengths**
 
 Example 1:
@@ -45,4 +49,42 @@ example_raw_First.html
 ```
 
 Each file plots the AUC values from different context lengths given the normalization method (raw, z score, or subtraction) and for the context of the predicted nucleotide (First, Middle, or Last).
+
+_**Each plot is shown below**_
+
+_example_subtraction_Last.html_
+<img width="1470" alt="Screenshot 2025-03-07 at 9 14 48 AM" src="https://github.com/user-attachments/assets/2ef2d13f-c115-405b-928c-ac88450df2bc" />
+
+
+_example_subtraction_Middle.html_
+<img width="1470" alt="Screenshot 2025-03-07 at 9 15 06 AM" src="https://github.com/user-attachments/assets/4741dcf3-1764-466d-8206-3fae3d11f1ea" />
+
+
+_example_subtraction_First.html_
+<img width="1470" alt="Screenshot 2025-03-07 at 9 14 15 AM" src="https://github.com/user-attachments/assets/c287dd5a-f667-41d0-9bb3-692652f91eac" />
+
+
+_example_zscore_Last.html_
+<img width="1470" alt="Screenshot 2025-03-07 at 9 15 36 AM" src="https://github.com/user-attachments/assets/5f316c13-a9f4-4911-ac72-faef0d1501a0" />
+
+
+_example_zscore_Middle.html_
+<img width="1470" alt="Screenshot 2025-03-07 at 9 15 50 AM" src="https://github.com/user-attachments/assets/caa9b184-0ad7-4a0f-9a99-9fb2b0b0eb66" />
+
+
+_example_zscore_First.html_
+<img width="1470" alt="Screenshot 2025-03-07 at 9 15 20 AM" src="https://github.com/user-attachments/assets/946e5f68-a974-49b4-8e6b-424fe8e733ee" />
+
+
+_example_raw_Last.html_
+<img width="1470" alt="Screenshot 2025-03-07 at 9 13 28 AM" src="https://github.com/user-attachments/assets/36609159-08a0-46e5-b419-da4d617fec1f" />
+
+
+_example_raw_Middle.html_
+<img width="1470" alt="Screenshot 2025-03-07 at 9 13 58 AM" src="https://github.com/user-attachments/assets/eef65a2f-ce9b-4462-bc14-dbab211c5701" />
+
+
+_example_raw_First.html_
+<img width="1470" alt="Screenshot 2025-03-07 at 9 13 42 AM" src="https://github.com/user-attachments/assets/7fd9776a-ccb3-490b-933b-e1c6f5815af2" />
+
 
