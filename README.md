@@ -68,6 +68,13 @@ _Example Command using 4096 tokens_
 python run_nt.py -i apoe.fasta -n 4096 -o apoe_nt_output_4096.txt
 ```
 
+_Example of the first few lines in an input fasta file. The fasta file for a single gene is usually pretty small <0.5MB_
+<img width="433" alt="Screenshot 2025-03-07 at 8 04 15 AM" src="https://github.com/user-attachments/assets/562062dd-3191-49a9-ad35-82304670123f" />
+
+_Example of first few lines in output text file. These output files range from several MB to >100G depending on the length of the gene and the context size_
+<img width="1482" alt="Screenshot 2025-03-07 at 8 07 40 AM" src="https://github.com/user-attachments/assets/30fbeeab-6593-49b1-9a07-e5376076e50a" />
+
+
 **Step 5: Run parseWindow.py**
 
 ```
@@ -88,6 +95,9 @@ _Example Command_
 ```
 python parseWindow.py -i apoe_nt_output_4096.txt -o apoe_ordered_predictions_4096.txt
 ```
+
+_Screenshot of the first few characters in each line of the output file. These output files are about the same size as the input file_ 
+<img width="808" alt="Screenshot 2025-03-07 at 8 11 23 AM" src="https://github.com/user-attachments/assets/b68ddcff-68bf-4070-a076-4fc5a11f2b82" />
 
 **Step 6: Run getPositions.py**
 
@@ -113,6 +123,10 @@ _Example Command_
 ```
 python getPositions.py -i apoe_ordered_predictions_4096.txt -n 4096 -o apoe_first_middle_last_predictions_4096.txt 
 ```
+
+_Screenshot of first few characters of apoe_first_middle_last_predictions_4096.txt. Expected output file size is <15MB_
+<img width="989" alt="Screenshot 2025-03-07 at 8 15 08 AM" src="https://github.com/user-attachments/assets/63c8e558-fc8e-4bbd-a113-842609ade2a7" />
+
 **Step 7: Run getOnePosition.py**
 
 ```
@@ -154,6 +168,9 @@ EGFR: 183535 (exon 29)
 TP53: 6800 (exon 4)
 
 Control: 850
+
+_The output file is expected to look similar to the screenshot below. Expected file size <1MB_
+<img width="852" alt="Screenshot 2025-03-07 at 8 17 23 AM" src="https://github.com/user-attachments/assets/7a2f09bd-9bf0-46d4-bf63-1de90fda840a" />
 
 **Step 8: Graph the Results**
 
