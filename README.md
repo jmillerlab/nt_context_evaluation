@@ -8,17 +8,35 @@ The same reference genome used for training the Nucleotide Transformer was used 
 wget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/GCF_000001405.26_GRCh38/GCF_000001405.26_GRCh38_genomic.fna.gz
 wget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/GCF_000001405.26_GRCh38/GCF_000001405.26_GRCh38_genomic.gff.gz
 ```
+
+_md5sum_
+```
+3d03cc56a6a65413b8abc5a3239d78cd  GCF_000001405.26_GRCh38_genomic.fna.gz
+17a5bba01d6af11a17822dd661ce4d7f  GCF_000001405.26_GRCh38_genomic.gff.gz
+```
+
 **Step 1a: bgzip and index the fna file so samtools can query it**
 ```
 zcat GCF_000001405.26_GRCh38_genomic.fna.gz | bgzip -c >GCF_000001405.26_GRCh38_genomic.fna.bgz
 samtools faidx GCF_000001405.26_GRCh38_genomic.fna.bgz
 ```
+
+_md5sum_
+```
+73e1c720bf86dec9e9c5a2f5dc6677a6  GCF_000001405.26_GRCh38_genomic.fna.bgz
+6a0bdc7a62ed22744b5da347f8835c68  GCF_000001405.26_GRCh38_genomic.fna.bgz.fai
+c7ef1d39c5d8402afac445e2e62f42f7  GCF_000001405.26_GRCh38_genomic.fna.bgz.gzi
+```
+
 **Step 2: Extract gene annotations from the gff file**
 
 As an example, here is how the APOE gene was extracted:
 ```
 zcat GCF_000001405.26_GRCh38_genomic.gff.gz |grep "gene=APOE;" >apoe_grch38.txt
 ```
+
+<img width="1039" alt="Screenshot 2025-03-07 at 9 04 49 AM" src="https://github.com/user-attachments/assets/c674ad62-6172-4cc7-ba13-3707e72d17e9" />
+
 **Step 2a: Select the interval that you want to query from apoe_grch38.txt**
 
 In this case, we wanted to look at the entire APOE gene sequence, which apoe_grch38.txt shows is located at NC_000019.10:44905782-44909393. However, since we want to evaluate how context impacts predictions, we padded that sequence with 50k bp upstream and downstream of the APOE gene. This padding allowed us to potentially test contexts up to 50k bp (e.g., when the first nucleotide of the APOE gene is the last nucleotide of a 50k input sequence). We decided to extract the following interval, which includes the 50k padding: NC_000019.10:44855782-44959393.
@@ -27,6 +45,8 @@ In this case, we wanted to look at the entire APOE gene sequence, which apoe_grc
 ```
 samtools faidx GCF_000001405.26_GRCh38_genomic.fna.bgz "NC_000019.10:44855782-44959393" >apoe.fasta
 ```
+<img width="833" alt="Screenshot 2025-03-07 at 9 06 02 AM" src="https://github.com/user-attachments/assets/aad033f8-3941-4036-9639-25ffe00c45e9" />
+
 Note: Genomic coordinates with +/- 50k bases for the other genes are listed as follows:
 
 EGFR   NC_000007.14:54969032-55257338
