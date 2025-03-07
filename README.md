@@ -174,65 +174,6 @@ _The output file is expected to look similar to the screenshot below. Expected f
 
 **Step 8: Graph the Results**
 
-**Step 8a: graph_pred_at_position.py** 
+The scripts to graph results are located in ```make_graphs```. Scripts to calculate the accuracy of the predictions are located in ```calculate_stats```. Please see the accompanying ```README.md``` in each directory for additional information on how to run each of those scripts.
 
-This script shows how the position of the nucleotide within the input sequence impacts the predicted probability of being an exon or an intron. Similarly, different intervals can be specified, which show how the start site of the input sequence impacts the predictions as well (i.e., moving the input sequence n nucleotides to the left or right impacts predictions for any nucleotide within the sequence)
 
-```
-usage: graph_pred_at_position.py [-h] -i INPUT -o OUTPUT [-n INTERVAL] [-p POSITION] [-s START] [-e END] [-v] [-z] [-g {apoe,egfr,tnf,tp53,vegfa,control}] [-t GRAPH_TITLE] [-oe] [-oi] [-m]
-
-Graph the exon/intron probabilities for a single nucleotide using different contexts
-
-options:
-  -h, --help            show this help message and exit
-  -i, --input INPUT     (input) Required input file with two lines: exon=[list of probabilities] and intron=[list of probabilities]
-  -o, --output OUTPUT   (output) Required output file path. Example: APOE_24.html
-  -n, --interval INTERVAL
-                        Interval size
-  -p, --position POSITION
-                        Position of nucleotide in gene
-  -s, --start START     Start of visualization window
-  -e, --end END         End of visualization window
-  -v, --verbose         flag to print the split lists for each interval
-  -z, --zscore          Optional normalization with z score
-  -g, --gene {apoe,egfr,tnf,tp53,vegfa,control}
-                        gene used in graph
-  -t, --graph_title GRAPH_TITLE
-                        Change Graph Title
-  -oe, --only_exon      Graph only the exon values. Note: Input file must still include the intron list
-  -oi, --only_intron    Graph only the intron values. Note: Input file must still include the exon list
-  -m, --markers         Draw the plot with the point markers visible
-```
-
-_Example Command_
-
-```
-python graph_pred_at_position.py -i apoe_at_pos_850_4096.txt -p 850 -g apoe -o apoe_850.html 
-```
-**Step 8b: graph_different_contexts.py**
-
-```
-usage: graph_different_contexts.py [-h] -i INPUT -o OUTPUT -g {apoe,egfr,tnf,tp53,vegfa,control} [-v] [-z] [-s] [-t GRAPH_TITLE] [-m]
-
-Graph the exon/intron probabilities across APOE when predicting the first, middle, or last nucleotide
-
-options:
-  -h, --help            show this help message and exit
-  -i, --input INPUT     (input) Required input json file containing a dictionary with key:value pairs of probabilities.
-  -o, --output OUTPUT   (output) Required output file path. Example: APOE_first_middle_last_graph.html. This will be appended to the name of the feature. For example, if the first feature is "Exon" the file
-                        path to the graph with that first feature will be "Exon_APOE_first_middle_last_graph.html"
-  -g, --gene {apoe,egfr,tnf,tp53,vegfa,control}
-                        gene used to draw exons on plot.
-  -v, --verbose         flag to print the split lists for each interval
-  -z, --zscore          Optional normalization with z score
-  -s, --svg             Optional Save SVG file with same name as html. Will save to Downloads directory
-  -t, --graph_title GRAPH_TITLE
-                        Change Graph Title
-  -m, --markers         Draw the plot with the point markers visible
-```
-
-_Example Command_
-
-```
-python graph_different_contexts.py -i apoe_first_middle_last_predictions.txt -o example_first_middle_last.html -g apoe
-```
