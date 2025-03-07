@@ -1,5 +1,9 @@
 # Evaluating how context impacts nucleotide-resolution predictions from the Nucleotide Transformer/SegmentNT in the top 5 most cited genes 
 
+**Step 0: Set Up Environment to Run the Nucleotide Transformer and SegmentNT**
+
+More information about the Nucleotide Transformer and SegmentNT can be found on their GitHub repository: https://github.com/instadeepai/nucleotide-transformer 
+
 **Step 1: Download the Reference Genome**
 
 The same reference genome used for training the Nucleotide Transformer was used for testing the effects of context on the predictions: GRCh38 (GCF_000001405.26).
