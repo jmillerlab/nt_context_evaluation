@@ -11,7 +11,7 @@ That command will create an output file called ```example.html``` that graphs th
 
 Four other output files will also be created or appended to:
 ```TNF_auc_plot.svg```: The AUC plot with AUC values calculated for the first, middle, and last positions
-```stats_last.txt```: Statistics for the last prediction including average±standard deviation (median) exon predictions in exons and intron, true positive, false positive, false negative, true negative, sensitivity, specificy, and accuracy. 
+```stats_last.txt```: Statistics for the last prediction including average±standard deviation (median) exon predictions in exons and intron, true positive, false positive, false negative, true negative, sensitivity, specificity, and accuracy. 
 ```stats_middle.txt``` The same as above but for the middle prediction
 ```stats_first.txt``` The same as above but for the predictions of the first nucleotide in a sequence
 
