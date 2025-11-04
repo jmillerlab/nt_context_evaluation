@@ -35,6 +35,11 @@ python graph_change_in_predictions_based_on_length.py -i example_auc_at_all_leng
 
 Similarly, ```example_auc_at_all_lengths.txt``` can be created by running ```graph_diff_Exon_Intron.py``` and putting the AUC values in a table of the same format as ```example_auc_at_all_lengths.txt```
 
+
+
+
+
+
 That command will produce 9 output files:
 ```
 example_subtraction_Last.html
@@ -91,4 +96,4 @@ _example_raw_First.html_
 **Calculate ANOVA and Tukey HSD for oscillating predictions**
 The purpose of this program is to determine if there is a significant difference between the predictions made using every 24th value, depending on the position in the context window. The ANOVA analysis shows that the p-value is 0.
 
-`python calculateANOVAandTukey.py -i positions/apoe_4096_850.txt >anova_output.txt`
+`python calculateANOVAandTukey.py -i ../make_graphs/apoe_at_pos_850_4096.txt >anova_output.txt`
