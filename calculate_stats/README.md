@@ -96,4 +96,6 @@ _example_raw_First.html_
 **Calculate ANOVA and Tukey HSD for oscillating predictions**
 The purpose of this program is to determine if there is a significant difference between the predictions made using every 24th value, depending on the position in the context window. The ANOVA analysis shows that the p-value is 0.
 
-`python calculateANOVAandTukey.py -i ../make_graphs/apoe_at_pos_850_4096.txt >anova_output.txt`
+```
+python calculateANOVAandTukey.py -i ../make_graphs/apoe_at_pos_850_4096.txt >anova_output.txt
+```
