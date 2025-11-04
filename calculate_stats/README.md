@@ -99,3 +99,10 @@ The purpose of this program is to determine if there is a significant difference
 ```
 python calculateANOVAandTukey.py -i ../make_graphs/apoe_at_pos_850_4096.txt >anova_output.txt
 ```
+
+**Smooth predictions across contexts**
+The purpose of this program is to show that averaging predictions using a sliding window that encompasses 24 prediction contexts (i.e., nucleotide of interest in context position 1-24 or 2-25, etc.) results in a line that no longer oscillates. The resulting output file can be passed into `../make_graphs/graph_pred_at_position.py` to visualize the results by using the `-n 1` option.
+
+```
+smoothContextPredictions.py -i ../make_graphs/apoe_at_pos_850_4096.txt -o smoothed_predictions.txt
+```
